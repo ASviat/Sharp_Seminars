@@ -1,4 +1,4 @@
-﻿// Задайте двумерный массив. Напишите прогу, которая заменит строки на столбцы. В случае, 
+﻿// 55. Задайте двумерный массив. Напишите прогу, которая заменит строки на столбцы. В случае, 
 // если это невозможно, прога должна вывести сообщение об ошибке для пользователя.
 
 Console.WriteLine("Введите количество строк: ");
@@ -19,7 +19,6 @@ PrintMatrix(filledMatrix);
 Console.WriteLine();
 int[,] changedMatrix = ChangeLinesToColumns(filledMatrix);
 PrintMatrix(changedMatrix);
-//PrintMatrix(ChangeLinesToColumns(filledMatrix));
 
 
 int[,] FillMatrix(int[,] matrix)
