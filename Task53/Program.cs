@@ -5,7 +5,7 @@ int[,] matrix = new int[5, 5];
 
 int[,] filledMatrix = FillMatrix(matrix);
 PrintMatrix(filledMatrix);
-ChangeFirstAndLastNumber(filledMatrix);
+ChangeFirstAndLastRow(filledMatrix);
 Console.WriteLine();
 PrintMatrix(filledMatrix);
 
@@ -36,9 +36,13 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void ChangeFirstAndLastNumber(int[,] matrix)
+void ChangeFirstAndLastRow(int[,] matrix)
 {
-    int temp = matrix[0, 0];
-    matrix[0, 0] = matrix[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
-    matrix[matrix.GetLength(0)-1, matrix.GetLength(1)-1] = temp;
+    int temp = default;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+    {
+        temp = matrix[0, i];
+        matrix[0, i] = matrix[matrix.GetUpperBound(0), i];
+        matrix[matrix.GetUpperBound(0), i] = temp;
+    }
 }
